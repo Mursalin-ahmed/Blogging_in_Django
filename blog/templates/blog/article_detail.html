@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article.title }}</title>
+    
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ article.title }}</h1>
+        <p>Welcome, {{ user.username }}!</p>
+        <p class="date">Published on {{ article.created_at|date:"F j, Y" }}</p>
+        <a href="{% url 'article-list' %}" class="btn">Back to Articles</a>
+    </header>
+
+    <section class="article-detail">
+        <p>{{ article.content }}</p>
+        
+            <a href="{% url 'article-edit' pk=article.pk %}" class="btn">Edit Article</a>
+            <a href="{% url 'article-delete' pk=article.pk %}" class="btn">Delete Article</a>
+        
+    </section>
+</body>
+</html>

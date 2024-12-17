@@ -1,0 +1,5 @@
+django-allauth
+django-markdownx
+djangorestframework
+openai
+tailwindcss

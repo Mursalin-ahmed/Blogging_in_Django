@@ -1,0 +1,27 @@
+<!-- users/templates/users/login.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Smart Blog System</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Login to Smart Blog System</h1>
+        <a href="{% url 'register' %}">Don't have an account? Register</a>
+    </header>
+
+    <section class="form-section">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+</body>
+</html>

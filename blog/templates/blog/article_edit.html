@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ form.instance.pk|default:"Create" }} Article</title>
+    <p>Welcome, {{ user.username }}!</p>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ form.instance.pk|default:"Create" }} Article</h1>
+        <a href="{% url 'article-list' %}" class="btn">Back to Articles</a>
+    </header>
+
+    <section class="article-form">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Save Article</button>
+        </form>
+    </section>
+</body>
+</html>
