@@ -1,13 +1,3 @@
-# Ignore Python virtual environment folders
 venv/
 .env/
 *.env
-
-# Ignore system files
-.DS_Store
-Thumbs.db
-
-# Ignore compiled files
-__pycache__/
-*.pyc
-*.pyo
